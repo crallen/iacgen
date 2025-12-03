@@ -21,7 +21,13 @@ async fn main() {
 
     logging::init(&args);
 
-    let config = aws_config::defaults(BehaviorVersion::latest()).load().await;
+    let mut config_loader = aws_config::defaults(BehaviorVersion::latest());
+
+    if let Some(profile) = args.profile {
+        config_loader = config_loader.profile_name(profile);
+    }
+
+    let config = config_loader.load().await;
 
     let mut writer: Box<dyn OutputWriter> = if let Some(output_path) = args.output {
         info!(

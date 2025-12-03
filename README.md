@@ -1,6 +1,6 @@
 # iacgen
 
-**� Proof of Concept**: This project was built as a proof-of-concept for generating Terraform configurations from existing AWS infrastructure. It will not be actively maintained and may not receive updates.
+**Proof of Concept**: This project was built as a proof-of-concept for generating Terraform configurations from existing AWS infrastructure. It will not be actively maintained and may not receive updates.
 
 ## Overview
 
