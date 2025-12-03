@@ -68,7 +68,7 @@ impl TerraformGenerator for Bucket {
 
         if let Some(encryption) = &self.encryption {
             let mut sse_by_default_block_builder =
-                Block::builder("server_side_encryption_by_default")
+                Block::builder("apply_server_side_encryption_by_default")
                     .add_attribute(("sse_algorithm", encryption.sse_algorithm.clone()));
 
             if let Some(kms_master_key_id) = &encryption.kms_master_key_id {
@@ -99,7 +99,7 @@ impl TerraformGenerator for Bucket {
                 .add_label(resource_name.clone())
                 .add_attribute(("bucket", bucket_traversal.clone()))
                 .add_block(
-                    Block::builder("versioning")
+                    Block::builder("versioning_configuration")
                         .add_attribute(("status", versioning.status.clone()))
                         .build(),
                 )
