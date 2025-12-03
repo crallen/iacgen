@@ -9,7 +9,13 @@
 ## Features
 
 Currently supports:
-- **S3 Buckets**: Generates `aws_s3_bucket`, `aws_s3_bucket_policy`, and `aws_s3_bucket_public_access_block` resources
+- **S3 Buckets**: Generates the following resources:
+  - `aws_s3_bucket`
+  - `aws_s3_bucket_policy`
+  - `aws_s3_bucket_public_access_block`
+  - `aws_s3_bucket_server_side_encryption_configuration`
+  - `aws_s3_bucket_versioning`
+  - `aws_s3_bucket_logging`
 
 ## Installation
 
